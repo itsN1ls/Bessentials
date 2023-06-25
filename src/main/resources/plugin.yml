@@ -1,0 +1,11 @@
+name: Bessentials
+version: '${project.version}'
+main: priv.nils.plugins.Bessentials
+api-version: '1.20'
+
+
+commands:
+  fly:
+    description: toggles flight
+  gamemode:
+    description: sets your gamemode
