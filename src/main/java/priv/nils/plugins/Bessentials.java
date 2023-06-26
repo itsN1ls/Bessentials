@@ -5,7 +5,8 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import priv.nils.plugins.commands.FlyCommand;
 import priv.nils.plugins.commands.GamemodeCommand;
-
+import priv.nils.plugins.commands.SpeedCommand;
+import priv.nils.plugins.commands.SuicideCommand;
 
 
 public final class Bessentials extends JavaPlugin {
@@ -15,6 +16,8 @@ public final class Bessentials extends JavaPlugin {
         // Plugin startup logic
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("gm").setExecutor(new GamemodeCommand());
+        getCommand("flyspeed").setExecutor(new SpeedCommand());
+        getCommand("suicide").setExecutor(new SuicideCommand());
 
     }
 

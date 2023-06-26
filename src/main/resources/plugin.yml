@@ -9,3 +9,10 @@ commands:
     description: toggles flight
   gamemode:
     description: sets your gamemode
+    aliases: ["gm"]
+  flyspeed:
+    description: sets your flyspeed
+    aliases: ["fs","fspeed"]
+  suicide:
+    description: kills you
+    aliases: ["die"]
