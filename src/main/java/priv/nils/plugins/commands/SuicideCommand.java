@@ -33,7 +33,7 @@ public class SuicideCommand implements CommandExecutor {
 
         // Kill the player
         player.setHealth(0.0D);
-        Bukkit.broadcastMessage(player.getName() + " killed themselves.");
+        Bukkit.broadcastMessage(player.getName() + " uh.. killed themselves.");
         // Restore the player's original display name
         player.displayName(Component.text(originalDisplayName));
         player.sendMessage(Prefix + "suicide.");

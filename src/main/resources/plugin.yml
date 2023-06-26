@@ -16,3 +16,6 @@ commands:
   suicide:
     description: kills you
     aliases: ["die"]
+  repair:
+    description: repairs item
+    aliases:  ["rep"]

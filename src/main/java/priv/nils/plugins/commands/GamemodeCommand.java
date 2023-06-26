@@ -1,5 +1,6 @@
 package priv.nils.plugins.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,20 +19,44 @@ public class GamemodeCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        if (!player.hasPermission("bessentials.gamemode") || !player.isOp()) {
+        if (!player.hasPermission("bessentials.gamemode") && !player.isOp()) {
             player.sendMessage("Unknown command. Type \"/help\" for help.");
             return true;
         }
 
-        GameMode targetGameMode = getTargetGameMode(args[0]);
+        GameMode targetGameMode;
 
-        if (targetGameMode == null) {
-            player.sendMessage("Invalid gamemode specified.");
-            return true;
+        if (args.length == 1) {
+            targetGameMode = getTargetGameMode(args[0]);
+
+            if (targetGameMode == null) {
+                player.sendMessage("Invalid gamemode specified.");
+                return true;
+            }
+
+            player.setGameMode(targetGameMode);
+            player.sendMessage(Prefix + "Gamemode changed to " + targetGameMode.toString() + ".");
+        } else if (args.length == 2) {
+            Player targetPlayer = Bukkit.getPlayer(args[1]);
+
+            if (targetPlayer == null) {
+                player.sendMessage("Player not found.");
+                return true;
+            }
+
+            targetGameMode = getTargetGameMode(args[0]);
+
+            if (targetGameMode == null) {
+                player.sendMessage("Invalid gamemode specified.");
+                return true;
+            }
+
+            targetPlayer.setGameMode(targetGameMode);
+            player.sendMessage(Prefix + "Gamemode of " + targetPlayer.getName() + " changed to " + targetGameMode.toString() + ".");
+        } else {
+            player.sendMessage("Usage: /gamemode <gamemode> [player]");
         }
 
-        player.setGameMode(targetGameMode);
-        player.sendMessage(Prefix + "gamemode: " + targetGameMode.toString() + ".");
         return true;
     }
 
