@@ -16,8 +16,8 @@ public class BeerListener implements Listener {
         if (item.getType() == Material.PLAYER_HEAD && item.getItemMeta() != null) {
             if (item.getItemMeta().hasDisplayName() && item.getItemMeta().getDisplayName().equals("Beer")) {
 
-                PotionEffect nausea = new PotionEffect(PotionEffectType.CONFUSION, 120, 2, false, false, false);
-                PotionEffect blindness = new PotionEffect(PotionEffectType.BLINDNESS, 20, 2, false, false, false);
+                PotionEffect nausea = new PotionEffect(PotionEffectType.CONFUSION, 2400, 2, false, false, false);
+                PotionEffect blindness = new PotionEffect(PotionEffectType.BLINDNESS, 400, 2, false, false, false);
                 e.getPlayer().addPotionEffect(nausea);
                 e.getPlayer().addPotionEffect(blindness);
                 item.setType(Material.AIR);

@@ -30,7 +30,7 @@ public class BeerCommand implements CommandExecutor {
         ItemStack beer = new ItemStack(Material.PLAYER_HEAD, 1);
         ItemMeta meta = beer.getItemMeta();
         SkullMeta skull = (SkullMeta) beer.getItemMeta();
-        meta.displayName(Component.text("Beer"));
+        meta.setDisplayName("Beer");
         skull.setOwner("Thanauser");
 
         player.getInventory().addItem(beer);

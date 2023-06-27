@@ -17,6 +17,8 @@ public final class Bessentials extends JavaPlugin {
         getCommand("flyspeed").setExecutor(new SpeedCommand());
         getCommand("suicide").setExecutor(new SuicideCommand());
         getCommand("beer").setExecutor(new BeerCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
+        getCommand("heal").setExecutor(new HealCommand());
         Bukkit.getPluginManager().registerEvents(new BeerListener(), this);
 
     }

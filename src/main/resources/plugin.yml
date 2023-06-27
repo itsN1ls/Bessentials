@@ -19,3 +19,8 @@ commands:
   beer:
     description: gives you beer
     aliases: ["bier"]
+  feed:
+    description: feeds you
+    aliases: ["eat"]
+  heal:
+    description: heals you
