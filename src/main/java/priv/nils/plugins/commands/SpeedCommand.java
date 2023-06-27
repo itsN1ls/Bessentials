@@ -1,6 +1,5 @@
 package priv.nils.plugins.commands;
 
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
