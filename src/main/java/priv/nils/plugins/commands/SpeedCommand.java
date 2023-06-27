@@ -1,6 +1,7 @@
 package priv.nils.plugins.commands;
 
 import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,7 +17,7 @@ public class SpeedCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String string, @NotNull String[] args) {
         Player player = (Player) sender;
         if (!(sender instanceof Player)) {
-            sender.sendMessage(Prefix + NamedTextColor.RED + "error: player only");
+            sender.sendMessage(Prefix + ChatColor.RED + "error: player only");
             return true;
         }
 
@@ -33,13 +34,13 @@ public class SpeedCommand implements CommandExecutor {
                 try {
                     speed = Float.parseFloat(args[1]);
                 } catch (NumberFormatException e) {
-                    player.sendMessage(Prefix + NamedTextColor.RED + "error: invalid format at arg 1");
+                    player.sendMessage(Prefix + ChatColor.RED + "error: invalid format at arg 1");
                     return true;
                 }
 
                 Player target = player.getServer().getPlayer(args[0]);
                 if (target == null) {
-                    player.sendMessage(Prefix + NamedTextColor.RED + "target doesn't exist.");
+                    player.sendMessage(Prefix + ChatColor.RED + "target doesn't exist.");
                     return true;
                 }
 
