@@ -10,11 +10,12 @@ import static priv.nils.plugins.Bessentials.Prefix;
 
 
 public class FlyCommand implements CommandExecutor {
-    public boolean fly = false;
+
     @Override
     public boolean onCommand(@NotNull CommandSender s, @NotNull Command cmd, @NotNull String string, @NotNull String[] args) {
 
         Player player = (Player) s;
+        boolean fly = player.getAllowFlight();
         if(player.hasPermission("bessentials.fly") || player.isOp()) {
             player.setAllowFlight(!(fly));
             player.setFlying(!(fly));
