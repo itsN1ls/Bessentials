@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import priv.nils.plugins.commands.*;
 import priv.nils.plugins.listeners.BeerListener;
+import priv.nils.plugins.listeners.ConnectListener;
 
 
 public final class Bessentials extends JavaPlugin {
@@ -20,6 +21,7 @@ public final class Bessentials extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
         Bukkit.getPluginManager().registerEvents(new BeerListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ConnectListener(), this);
 
     }
 
